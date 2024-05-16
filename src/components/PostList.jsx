@@ -2,6 +2,7 @@ import classes from './PostList.module.css'
 import Post from "./Post";
 import NewPost from "./NewPost.jsx";
 import { useState } from 'react';
+import Modal from './Modal.jsx';
 
 export default function PostList(props){
   const [enteredText, setEnteredText] = useState('');
@@ -17,7 +18,11 @@ export default function PostList(props){
 
   return(
     <>
-    <NewPost onTextChange={changeHandler} onAuthorChange={changeAuthorHandler}/>
+    <Modal>
+    <NewPost 
+      onTextChange={changeHandler} 
+      onAuthorChange={changeAuthorHandler}/>
+       </Modal>
     <ul className={classes.posts}>
       <Post author={author} body={enteredText}/>
       <Post author={author} body={enteredText}/>
