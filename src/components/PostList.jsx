@@ -4,15 +4,10 @@ import NewPost from "./NewPost.jsx";
 import { useState } from 'react';
 import Modal from './Modal.jsx';
 
-export default function PostList(props){
-  const [modalIsVisible, setModalIsVisible] = useState(true);
+export default function PostList({isVisible, onStopShowing}){
   const [enteredText, setEnteredText] = useState('');
   const [author, setAuthor] = useState('');
 
-  function hideModalHandler(){
-    setModalIsVisible(false)
-  }
-  
   function changeHandler(event){
     setEnteredText(event.target.value);
   }
@@ -23,7 +18,7 @@ export default function PostList(props){
 
   return(
     <>
-    {modalIsVisible && <Modal onHide={hideModalHandler}>
+    {isVisible && <Modal onHide={onStopShowing}>
     <NewPost 
       onTextChange={changeHandler} 
       onAuthorChange={changeAuthorHandler}/>
