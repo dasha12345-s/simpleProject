@@ -1,8 +1,13 @@
 import classes from './NewPost.module.css';
+import { useState } from 'react';
 
 function NewPost() {
+
+  const [enteredText, setEnteredText] = useState('');
+
+
   function changeHandler(event){
-    console.log(event.target.value)
+    setEnteredText(event.target.value);
   }
 
   return (
@@ -11,6 +16,7 @@ function NewPost() {
         <label htmlFor="body">Text</label>
         <textarea id="body" required rows={3} onChange={changeHandler}/>
       </p>
+      <p>{enteredText}</p>
       <p>
         <label htmlFor="name">Your name</label>
         <input type="text" id="name" required />
