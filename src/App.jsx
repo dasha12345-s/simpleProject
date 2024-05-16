@@ -3,11 +3,8 @@ import Post from "./components/Post.jsx";
 function App() {
   return (
     <main>
-      <Post/>
-      <Post/>
-      <Post/>
-      <Post/>
-      <Post/>
+      <Post author='Daria' body='me'/>
+      <Post author='Fed' body='he'/>
     </main>
   );
 }
