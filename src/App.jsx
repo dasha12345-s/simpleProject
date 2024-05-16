@@ -1,10 +1,9 @@
-import Post from "./components/Post.jsx";
+import PostList from "./components/PostList.jsx";
 
 function App() {
   return (
     <main>
-      <Post author='Daria' body='me'/>
-      <Post author='Fed' body='he'/>
+      <PostList/>
     </main>
   );
 }
