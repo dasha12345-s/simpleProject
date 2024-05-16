@@ -21,7 +21,8 @@ export default function PostList({isVisible, onStopShowing}){
     {isVisible && <Modal onHide={onStopShowing}>
     <NewPost 
       onTextChange={changeHandler} 
-      onAuthorChange={changeAuthorHandler}/>
+      onAuthorChange={changeAuthorHandler}
+      onCancel={onStopShowing}/>
        </Modal>}
     <ul className={classes.posts}>
       <Post author={author} body={enteredText}/>
