@@ -1,9 +1,9 @@
 import classes from './Modal.module.css'
 
-export default function Modal({children, onHide}){
+export default function Modal({children}){
   return(
     <>
-    <div className={classes.backdrop} onClick={onHide}>
+    <div className={classes.backdrop}> 
       <dialog open className={classes.modal}>
       {children}
       </dialog>
