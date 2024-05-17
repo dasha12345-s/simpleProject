@@ -20,10 +20,17 @@ export default function PostList({isVisible, onStopShowing}){
         onCancel={onStopShowing} onAddPost={addPostHandler}/>
          </Modal>
     )}
-    <ul className={classes.posts}>
-      <Post author='me' body='me'/>
-     
+    {posts.length > 0 && (
+      <ul className={classes.posts}>
+      {posts.map((post) => <Post key={post.body} author={post.author} body={post.body}/> )}
     </ul>
+    )}
+    {posts.length === 0 && (
+      <div style={{ textAlign: 'center', color: 'white' }}>
+        <h2>There are no props yet.</h2>
+        <p>Start adding some!</p>
+      </div>
+    )}
     </>   
   )
 }
