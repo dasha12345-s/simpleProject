@@ -7,8 +7,7 @@ function App() {
 
   const [modalIsVisible, setModalIsVisible] = useState(false);
 
-  function hideModalHandler(event){
-    console.log(event.target)
+  function hideModalHandler(){
     setModalIsVisible(false)
   }
 
