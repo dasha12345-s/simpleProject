@@ -4,10 +4,14 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
 import NewPost from './components/NewPost.jsx'
+import Root from './routes/Root.jsx'
 
 const router = createBrowserRouter([
+  {path:'/', element: <Root />, children: [
+
   {path:'/', element: <App />},
   {path: '/create-post', element: <NewPost/>}
+  ]},
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
