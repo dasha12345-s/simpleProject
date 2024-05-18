@@ -8,10 +8,15 @@ export default function Modal({children}){
   function closeHandler(){
     nav('/')
   }
+
+  function stopPropagationHandler(event) {
+    event.stopPropagation();
+  }
+
   return(
     <>
     <div className={classes.backdrop} onClick={closeHandler}> 
-      <dialog open className={classes.modal}>
+      <dialog open className={classes.modal} onClick={stopPropagationHandler}>
       {children}
       </dialog>
     </div>
